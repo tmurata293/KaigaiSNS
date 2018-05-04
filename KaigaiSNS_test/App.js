@@ -1,24 +1,22 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, AppRegistry, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, AppRegistry, TouchableOpacity, Image } from 'react-native';
 
 // component for APP login
 export default class app_login extends React.Component {
   render() {
-      // set background image -> upload image on web server?
-      let background_Image = {
-      require('./adventure-ball-shaped-blur-346885.jpg')
-      }
+      
     return (
       <View style={login_UI.container}>
-            <Image source = {background_Image} style = {login_UI.image} />
+            //画像はKaigaiSNS_test内のimageディレクトリにある
+            <Image source = {require('./image/background_img.jpg')} style={login_UI.image}/>
             //app_ name
             <Text style = {login_UI.app_name} > KAIGAI-SNS </Text>
                  // email column
-                 <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.text_column_email}>
+            <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.text_column}>
                       <Text> EMAIL </Text>
                  </TouchableOpacity>
                  // password column
-                 <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.text_column_password}>
+            <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.text_column}>
                       <Text> PASSWORD </Text>
                  </TouchableOpacity>
                  /// login button
@@ -37,7 +35,7 @@ export default class app_login extends React.Component {
                  <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.button_touch}>
                       <Text> Forgot password?  </Text>
                  </TouchableOpacity>
-      </View>
+            </View>
             
     );
   }
@@ -45,8 +43,7 @@ export default class app_login extends React.Component {
 
 const login_UI = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
+    //backgroundColor: '#ffffff',
     //alignItems: 'center',
     //justifyContent: 'center',
                                 
@@ -68,18 +65,7 @@ const login_UI = StyleSheet.create({
     alignItems: 'center',
   },
                                    
-  text_column_email:{
-     alignItems: 'center',
-     position: 'absolute',
-     width: 329,
-     height: 33,
-     left: 23,
-     top: 300,
-     backgroundColor: '#aaaaaa',
-     borderRadius: 30,
-  },
-                                   
-  text_column_password:{
+  text_column:{
      alignItems: 'center',
      position: 'absolute',
      width: 329,
@@ -88,7 +74,7 @@ const login_UI = StyleSheet.create({
      top: 400,
      backgroundColor: '#aaaaaa',
      borderRadius: 30,
-   },
+  },
                                    
   button_small:{
      backgroundColor: '#fff',
