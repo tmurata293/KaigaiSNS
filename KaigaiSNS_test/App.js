@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, AppRegistry, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, AppRegistry, TouchableOpacity, Image, TextInput } from 'react-native';
 
 // component for APP login
 export default class app_login extends React.Component {
@@ -24,9 +24,9 @@ export default class app_login extends React.Component {
                     <View style = {{flex: 5}}/>
                     <View style = {{flex: 1}}>
                         // email column
-                        <TextInput onChangeText={(text) => this.setState({text})} placeholder = {'Email'} style = {login_UI.text_column}>
-                            <Text style={{fontFamily: 'Cochin', color: '#E0E0E0',  fontWeight: 'bold', fontSize: 20}}> {this.state.text} </Text>
-                        </TextInput>
+                        <TouchableOpacity onPress = {this._onPressButton} style = {login_UI.text_column}>
+                            <Text style={{fontFamily: 'Cochin', color: '#E0E0E0',  fontWeight: 'bold', fontSize: 20}}> Email </Text>
+                        </TouchableOpacity>
                     </View>
                     <View style = {{flex: 1}}>
                         // password column
